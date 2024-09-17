@@ -49,7 +49,7 @@ export default function Financas() {
           <option value="receita">Receita</option>
           <option value="despesa">Despesa</option>
         </select>
-        <button type="submit">Adicionar</button>
+        <button type="submit">adicionar</button>
       </form>
 
       <h2>Saldo: R$ {saldo.toFixed(2)}</h2>
