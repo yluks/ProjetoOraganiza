@@ -46,7 +46,7 @@ export default function Financas() {
           required
         />
         <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
-          <option value="receita">Receita</option>
+          <option value="receita">Receita</option>9
           <option value="despesa">Despesa</option>
         </select>
         <button type="submit">adicionar</button>
