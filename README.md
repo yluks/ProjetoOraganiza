@@ -17,7 +17,7 @@ Um aplicativo web desenvolvido para ajudar na gestão e controle de finanças pe
 
 ## Estrutura do Projeto
 
-- **index.html**: Página de login.
+- **login.html**: Página de login.
 - **cadastro.html**: Página de cadastro de novos usuários.
 - **recuperacao.html**: Página de recuperação de senha.
 
