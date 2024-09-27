@@ -1,28 +1,39 @@
 # Projeto Organiza
 
-Um aplicativo web desenvolvido para ajudar na gestão e controle de finanças pessoais. O projeto é dividido em várias páginas, incluindo login, cadastro e recuperação de senha, todas projetadas com uma interface amigável e responsiva.
+O **Projeto Organiza** é um aplicativo web de gerenciamento financeiro que tem como objetivo ajudar os usuários a controlar suas receitas, despesas, orçamentos e investimentos de maneira organizada e intuitiva. Ele conta com uma interface moderna, minimalista e responsiva, permitindo que o usuário tenha uma visão clara de sua saúde financeira.
 
-## Funcionalidades
+## Funcionalidades Principais
 
-- **Login**: Acesso ao sistema para usuários cadastrados.
-- **Cadastro**: Criação de novas contas com informações como nome completo, e-mail ou CPF e senha.
-- **Recuperação de Senha**: Opção para redefinir a senha através do fornecimento do nome completo e e-mail.
-- **Design Responsivo**: Interface adaptável a diferentes tamanhos de tela, utilizando Tailwind CSS para estilização.
+- **Login e Cadastro**: Sistema de autenticação para usuários, com recuperação de senha.
+- **Painel Principal**: Dashboard que exibe uma visão geral do saldo total, gastos e dinheiro poupado, além de gráficos de desempenho financeiro.
+- **Receitas e Despesas**: Controle de entradas e saídas financeiras, com a possibilidade de adicionar, editar e excluir transações.
+- **Orçamento**: Ferramenta para definir limites de orçamento e monitorar o desempenho financeiro em relação a ele.
+- **Investimentos**: Monitoramento de investimentos e avaliação do desempenho.
+- **Configurações**: Personalização das configurações da conta do usuário.
 
 ## Tecnologias Utilizadas
 
-- **HTML**: Estruturação das páginas.
-- **CSS**: Estilização utilizando Tailwind CSS.
-- **JavaScript**: Lógica de navegação entre as páginas.
+- **Frontend**: HTML5, CSS3 (Tailwind CSS), JavaScript.
+- **Bibliotecas**: Tailwind CSS para estilização e Chart.js para gráficos interativos.
+- **Backend**: [Nest.js](https://nestjs.com/) (será integrado para gerenciar a lógica do servidor e banco de dados).
+- **Design**: Figma foi utilizado para criar o design moderno e inovador, focado em uma experiência de usuário minimalista e eficiente.
 
 ## Estrutura do Projeto
 
-- **login.html**: Página de login.
-- **cadastro.html**: Página de cadastro de novos usuários.
-- **recuperacao.html**: Página de recuperação de senha.
+O projeto é composto por diversas páginas, cada uma com uma funcionalidade específica. As principais são:
 
-## Como Executar o Projeto
+- `login.html`: Tela de login para os usuários acessarem suas contas.
+- `cadastro.html`: Tela de cadastro de novos usuários.
+- `recuperacao.html`: Tela de recuperação de senha.
+- `dashboard.html`: Painel principal com uma visão geral do estado financeiro do usuário.
+- `receitas-despesas.html`: Página para gerenciar as receitas e despesas.
+- `orcamento.html`: Página para definir e acompanhar o orçamento.
+- `investimento.html`: Página para gerenciar e acompanhar os investimentos.
+- `configuracoes.html`: Página de configurações da conta.
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/yluks/ProjetoOraganiza.git
+## Instalação
+
+1. Clone o repositório do GitHub:
+
+```bash
+git clone https://github.com/yluks/ProjetoOrganiza.git
