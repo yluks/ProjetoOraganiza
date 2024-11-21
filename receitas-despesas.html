@@ -9,6 +9,214 @@
         body {
             background: linear-gradient(to bottom right, #b3c7f9, #4a90e2);
         }
+        
+        /* Estilos Gerais */
+        body {
+        font-family: 'Arial', sans-serif;
+        background-color: #d7e7fe;
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
+
+    /* Menu Lateral */
+        .sidebar {
+        width: 250px;
+        height: 100vh;
+        background-color: #ffffff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 20px 15px;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+            .sidebar ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .sidebar ul li {
+                margin-bottom: 15px;
+            }
+
+            .sidebar ul li a {
+                text-decoration: none;
+                font-size: 16px;
+                color: #333;
+                display: block;
+                padding: 10px 15px;
+                border-radius: 5px;
+                transition: background 0.3s ease;
+            }
+
+            .sidebar ul li a:hover {
+                background-color: #d7e7fe;
+            }
+
+            .sidebar .logo {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            /* Conteúdo Principal */
+            .main-content {
+                margin-left: 270px;
+                padding: 20px 30px;
+            }
+
+            .main-content h1 {
+                font-size: 24px;
+                color: #2c3e50;
+                margin-bottom: 20px;
+            }
+
+            /* Caixa de Configurações */
+            .notification-settings {
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .notification-settings h2 {
+                font-size: 20px;
+                color: #333;
+                margin-bottom: 10px;
+            }
+
+            /* Notificações */
+            .notification-options label {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+                font-size: 16px;
+                color: #333;
+            }
+
+            .notification-options .toggle-switch {
+                position: relative;
+                display: inline-block;
+                width: 50px;
+                height: 25px;
+            }
+
+            .notification-options .toggle-switch input {
+                display: none;
+            }
+
+            .notification-options .toggle-slider {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                border-radius: 25px;
+                cursor: pointer;
+                transition: 0.4s;
+            }
+
+            .notification-options .toggle-slider:before {
+                content: "";
+                position: absolute;
+                height: 20px;
+                width: 20px;
+                left: 4px;
+                bottom: 2.5px;
+                background-color: white;
+                border-radius: 50%;
+                transition: 0.4s;
+            }
+
+            .notification-options input:checked + .toggle-slider {
+                background-color: #007bff;
+            }
+
+            .notification-options input:checked + .toggle-slider:before {
+                transform: translateX(25px);
+            }
+
+            /* Personalização de Lembretes */
+            .custom-reminders {
+                margin-top: 20px;
+            }
+
+            .custom-reminders select,
+            .custom-reminders input,
+            .custom-reminders button {
+                padding: 10px;
+                font-size: 14px;
+                margin-right: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                outline: none;
+            }
+
+            .custom-reminders button {
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .custom-reminders button:hover {
+                background-color: #0056b3;
+            }
+
+            /* Próximos Lembretes */
+            .upcoming-reminders {
+                margin-top: 20px;
+            }
+
+            .upcoming-reminders .reminder-item {
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 10px;
+                margin-bottom: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .upcoming-reminders .reminder-item .actions {
+                display: flex;
+                gap: 10px;
+            }
+
+            .upcoming-reminders .reminder-item .actions button {
+                background-color: #e0e0e0;
+                border: none;
+                border-radius: 3px;
+                padding: 5px 10px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .upcoming-reminders .reminder-item .actions button:hover {
+                background-color: #ccc;
+            }
+
+            /* Botão Salvar Configurações */
+            .save-button {
+                display: block;
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                text-align: center;
+                transition: background-color 0.3s;
+            }
+
+            .save-button:hover {
+                background-color: #0056b3;
+            }
     </style>
 </head>
 <body>

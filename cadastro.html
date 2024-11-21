@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Projeto Organiza</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    main.form-container {
+      display: flex;
+      width: 800px;
+      background-color: #ffffff;
+      border-radius: 30px; /* Aumentado para bordas bem arredondadas */
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Estilo para o lado esquerdo (login) */
+    .form-box {
+      background-color: #2c3e8c;
+      color: #ffffff;
+      flex: 1;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-top-left-radius: 30px; /* Aumentado para bordas bem arredondadas */
+      border-bottom-left-radius: 30px; /* Aumentado para bordas bem arredondadas */
+    }
+
+    .form-box img {
+      width: 100px; /* Tamanho adequado */
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .form-box h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .form-box p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .form-box .btn {
+      background-color: #ffffff;
+      color: #2c3e8c;
+      border: none;
+      border-radius: 30px; /* Aumentado para bordas bem arredondadas */
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .form-box .btn:hover {
+      background-color: #e2e8f0;
+    }
+
+    .form-box a {
+      color: #ffffff;
+      font-size: 14px;
+      text-decoration: underline;
+    }
+
+    .form-box a:hover {
+      text-decoration: none;
+    }
+
+    /* Estilo para o lado direito (cadastro) */
+    .register {
+      flex: 1;
+      padding: 40px 20px;
+    }
+
+    .register h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #2c3e8c;
+      text-align: center;
+    }
+
+    .register form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .register label {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .register input {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 30px; /* Aumentado para bordas bem arredondadas */
+      width: 100%;
+    }
+
+    .register .btn {
+      background-color: #2c3e8c;
+      color: #ffffff;
+      border: none;
+      border-radius: 30px; /* Aumentado para bordas bem arredondadas */
+      padding: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .register .btn:hover {
+      background-color: #1a2769;
+    }
+  </style>
+</head>
+<body>
+  <main class="form-container">
+    <!-- Lado esquerdo (Login) -->
+    <div class="form-box">
+      <img src="logo.png" alt="Logo do Projeto Organiza">
+      <h2>Bem-vindo de volta!</h2>
+      <p>Acesse sua conta agora mesmo</p>
+      <p><a href="tela_login.html">Entrar</a></p>
+      <p><a href="recuperar.html">Esqueceu a senha?</a></p>
+    </div>
+
+    <!-- Lado direito (Cadastro) -->
+    <div class="register">
+      <h2>Crie sua conta</h2>
+      <form action="#" method="POST">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+
+        <button type="submit" class="btn">Cadastrar</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

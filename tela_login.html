@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Projeto Organiza</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Barra lateral esquerda */
+    .sidebar {
+      width: 250px;
+      background-color: #2c3e8c;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+    }
+
+    .sidebar img {
+      width: 150px; /* Ajuste o tamanho da logo conforme necessário */
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .sidebar h1 {
+      font-size: 20px;
+      margin-top: 10px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    /* Formulário */
+    main.form-container {
+      flex: 1;
+      background-color: #ffffff;
+      border-radius: 30px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #2c3e8c;
+      margin-bottom: 20px;
+    }
+
+    .form-box {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 500px; /* Aumentado o tamanho máximo do formulário */
+    }
+
+    .form-box h2 {
+      font-size: 24px;
+      color: #2c3e8c;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-box label {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 5px;
+      text-align: left;
+    }
+
+    .form-box input {
+      padding: 15px; /* Aumentado o padding para tornar os campos maiores */
+      margin-bottom: 20px; /* Aumentado o espaço entre os campos */
+      border: 1px solid #ccc;
+      border-radius: 30px;
+      width: 100%;
+      font-size: 16px; /* Aumentado o tamanho da fonte dos campos */
+    }
+
+    .form-box .btn {
+      background-color: #2c3e8c;
+      color: #ffffff;
+      border: none;
+      border-radius: 30px;
+      padding: 15px 30px; /* Aumentado o tamanho do botão */
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .form-box .btn:hover {
+      background-color: #1a2769;
+    }
+
+    .form-box a {
+      font-size: 14px;
+      color: #2c3e8c;
+      text-decoration: underline;
+    }
+
+    .form-box a:hover {
+      text-decoration: none;
+    }
+
+    .form-box p {
+      font-size: 14px;
+      color: #333;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <!-- Aqui você deve adicionar sua logo -->
+    <img src="logo.png" alt="Logo do Projeto Organiza"> <!-- Sinalize onde colocar sua logo -->
+  </div>
+
+  <main class="form-container">
+    <h1>Seja Bem-vindo</h1> <!-- Título alterado para "Seja Bem-vindo" na parte branca -->
+    <form action="#" method="POST" class="form-box">
+      <h2>Login</h2>
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+      
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+      
+      <button type="submit" class="btn">Entrar</button>
+
+      <p><a href="recuperar.html">Esqueceu a senha?</a></p>
+      <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+    </form>
+  </main>
+</body>
+</html>

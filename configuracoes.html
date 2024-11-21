@@ -1,36 +1,342 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="En">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configurações</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
+        /* Estilos Gerais */
         body {
-            background: linear-gradient(to bottom right, #b3c7f9, #4a90e2);
+            font-family: 'Arial', sans-serif;
+            background-color: #e9f1fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Barra lateral */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100vh;
+            background-color: #ffffff;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .sidebar .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .sidebar .logo img {
+            width: 150px;
+            height: auto;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            color: #2c3e50;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #f0f8ff;
+            color: #007bff;
+        }
+
+        .sidebar ul li a.active {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        /* Conteúdo Principal */
+        .main-content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+
+        .main-content h1 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .notification-settings {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification-section h2 {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .notification-item {
+            margin-bottom: 15px;
+        }
+
+        .notification-item label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .notification-description {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 25px;
+        }
+
+        .toggle-switch input {
+            display: none;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .toggle-slider:before {
+            content: "";
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            left: 4px;
+            bottom: 2.5px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.4s;
+        }
+
+        .toggle-switch input:checked + .toggle-slider {
+            background-color: #007bff;
+        }
+
+        .toggle-switch input:checked + .toggle-slider:before {
+            transform: translateX(25px);
+        }
+
+        .save-button {
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .save-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para Personalizar Lembretes */
+        .customize-reminders {
+            background-color: #cce5ff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .customize-reminders h2 {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .customize-reminders label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .customize-reminders .input-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .customize-reminders input[type="text"] {
+            width: 250px;
+            padding: 8px;
+            font-size: 16px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .customize-reminders .button-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .customize-reminders .round-button {
+            width: 100px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: #0b8be0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        .customize-reminders .round-button:hover {
+            background-color: #333;
+        }
+
+        .button-container .button-text {
+            font-size: 14px;
+            color: black;
+            margin-left: 10px;
+        }
+
+        /* Novo Botão Salvar Lembrete */
+        .save-reminder-button {
+            margin-top: 20px;
+            width: 200px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .save-reminder-button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <div class="flex">
-        <aside class="w-64 bg-white h-screen shadow-md">
-            <div class="w-full p-5 flex justify-center items-center">
-                <img class="rounded-2xl" src="logo.jpeg" alt="Organiza Logo" style="width: 200px; height: auto;">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="dashboard.html" class="block py-2.5 px-4 hover:bg-gray-100 text-blue-600">Painel Principal</a></li>
-                    <li><a href="receitas-despesas.html" class="block py-2.5 px-4 hover:bg-gray-100 text-blue-600">Receitas e Despesas</a></li>
-                    <li><a href="orcamento.html" class="block py-2.5 px-4 hover:bg-gray-100 text-blue-600">Orçamento</a></li>
-                    <li><a href="investimento.html" class="block py-2.5 px-4 hover:bg-gray-100 text-blue-600">Investimento</a></li>
-                    <li><a href="configuracoes.html" class="block py-2.5 px-4 hover:bg-gray-100 text-blue-600">Configurações</a></li>
-                </ul>
-            </nav>
-        </aside>
-
-        <main class="flex-1 p-6">
-            <h1 class="text-3xl font-bold mb-4 text-white">Configurações</h1>
-        </main>
+    <!-- Barra Lateral -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="logo.jpeg" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="dashboard.html">Painel Principal</a></li>
+            <li><a href="receitas-despesas.html">Receitas e Despesas</a></li>
+            <li><a href="orcamento.html">Orçamento</a></li>
+            <li><a href="investimento.html">Investimento</a></li>
+            <li><a href="configuracoes.html" class="active">Configurações</a></li>
+        </ul>
     </div>
-</body>
-</html>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        <h1>Configurações de Lembretes e Notificações</h1>
+
+        <!-- Seção de Notificações -->
+        <div class="notification-settings">
+            <div class="notification-section">
+                <h2>Tipo de Notificação</h2>
+
+                <!-- Lembretes de Pagamento -->
+                <div class="notification-item">
+                    <label>
+                        <span>Lembretes de Pagamento</span>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="payment">
+                            <label class="toggle-slider" for="payment"></label>
+                        </div>
+                    </label>
+                    <div class="notification-description">
+                        Receba lembretes sobre próximos pagamentos de contas.
+                    </div>
+                </div>
+
+                <!-- Datas de Vencimento do Investimento -->
+                <div class="notification-item">
+                    <label>
+                        <span>Datas de Vencimento do Investimento</span>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="investment">
+                            <label class="toggle-slider" for="investment"></label>
+                        </div>
+                    </label>
+                    <div class="notification-description">
+                        Receba lembretes sobre as datas de vencimento do investimento.
+                    </div>
+                </div>
+
+                <!-- Datas de Depósito do Contracheque -->
+                <div class="notification-item">
+                    <label>
+                        <span>Datas de Depósito do Contracheque</span>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="payroll">
+                            <label class="toggle-slider" for="payroll"></label>
+                        </div>
+                    </label>
+                    <div class="notification-description">
+                        Receba lembretes
+                        <div class="customize-reminders">
+                            <h2>Personalizar Lembretes</h2>
+                
+                            <div class="input-container">
+                                <label for="reminder-type">Tipo de Lembrete:</label>
+                                <input type="text" id="reminder-type" placeholder="Digite o tipo de lembrete">
+                            </div>
+                
+                            <div class="input-container">
+                                <label for="reminder-date">Data (dd/mm/aaaa):</label>
+                                <input type="text" id="reminder-date" placeholder="Digite a data">
+                            </div>
+                
+                            <div class="button-container">
+                                <button class="round-button">Um dia antes</button>
+                                <button class="round-button">Mesmo dia</button>
+                                <button class="round-button">Personalizado</button>
+                            </div>
+                
+                            <div class="button-container">
+                                <span class="button-text">"Um dia antes"</span>
+                                <span class="button-text">"Mesmo dia"</span>
+                                <span class="button-text">"Personalizado"</span>
+                            </div>
+                
+                            <!-- Botão Salvar Lembrete -->
+                            <button class="save-reminder-button">Salvar Lembrete</button>
+                        </div>
