@@ -3,35 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orçamento</title>
+    <title>Gestão de Orçamento</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to bottom right, #b3c7f9, #4a90e2);
+            background: #d4e4ff; /* Fundo azul claro */
+            font-family: 'Arial', sans-serif; /* Fonte padrão */
+        }
+        .sidebar {
+            background: #fff; /* Branco para a barra lateral */
+            color: #475569; /* Azul-escuro para texto */
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            background: #1d4ed8;
+            color: #fff;
+        }
+        .btn:hover {
+            background: #2563eb;
+        }
+        .alert {
+            background: #fee2e2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+        }
+        .chart-bar {
+            background: #2563eb; /* Azul para a barra */
+        }
+        .chart-bar-exceeded {
+            background: #dc2626; /* Vermelho para a barra excedida */
         }
     </style>
 </head>
 <body>
     <div class="flex">
-        <aside class="w-64 bg-white h-screen shadow-md">
-            <div class="w-full p-5 flex justify-center items-center">
-                <img class="rounded-2xl" src="logo.jpeg" alt="Organiza Logo" style="width: 200px; height: auto;">
+        <!-- Barra Lateral -->
+        <aside class="sidebar w-64 h-screen shadow-lg p-6">
+            <div class="mb-8">
+                <img src="logo.png" alt="Logo" class="rounded-md mx-auto w-32">
             </div>
             <nav>
                 <ul>
-                    <li><a href="dashboard.html" class="block py-2.5 px-4 hover:bg-gray-100 text-blue-600">Painel Principal</a></li>
-                    <li><a href="receitas-despesas.html" class="block py-2.5 px-4 hover:bg-gray-100 text-blue-600">Receitas e Despesas</a></li>
-                    <li><a href="orcamento.html" class="block py-2.5 px-4 hover:bg-gray-100 text-blue-600">Orçamento</a></li>
-                    <li><a href="investimento.html" class="block py-2.5 px-4 hover:bg-gray-100 text-blue-600">Investimento</a></li>
-                    <li><a href="configuracoes.html" class="block py-2.5 px-4 hover:bg-gray-100 text-blue-600">Configurações</a></li>
+                    <li><a href="dashboard.html" class="block py-2 px-4 hover:bg-blue-100">Painel principal</a></li>
+                    <li><a href="receitas-despesas.html" class="block py-2 px-4 hover:bg-blue-100">Receitas e Despesas</a></li>
+                    <li><a href="orcamento.html" class="block py-2 px-4 bg-blue-600 text-white rounded-lg">Orçamento</a></li>
+                    <li><a href="investimento.html" class="block py-2 px-4 hover:bg-blue-100">Investimento</a></li>
+                    <li><a href="configuracoes.html" class="block py-2 px-4 hover:bg-blue-100">Configurações</a></li>
                 </ul>
             </nav>
         </aside>
 
-        <main class="flex-1 p-6">
-            <h1 class="text-3xl font-bold mb-4 text-white">Orçamento</h1>
+        <!-- Conteúdo Principal -->
+        <main class="flex-1 p-8">
+            <h1 class="text-3xl font-bold text-blue-600 mb-6">Gestão de Orçamento</h1>
+
+            <!-- Formulário de Orçamento -->
+            <section class="card p-6 mb-6">
+                <h2 class="text-lg font-semibold text-blue-600 mb-4">Adicionar Novo Orçamento</h2>
+                <form>
+                    <label for="category" class="block mb-2 text-gray-700">Categoria</label>
+                    <select id="category" class="w-full p-2 mb-4 border rounded-md">
+                        <option>Alimentação</option>
+                        <option>Locomoção</option>
+                        <option>Mercado</option>
+                    </select>
+
+                    <label for="budget-value" class="block mb-2 text-gray-700">Valor do Orçamento</label>
+                    <input type="text" id="budget-value" placeholder="R$ 0,00" 
+                           class="w-full p-2 mb-4 border rounded-md">
+
+                    <button type="submit" class="btn w-full py-2 rounded-lg">Adicionar Orçamento</button>
+                </form>
+            </section>
+
+            <section class="card p-6 mb-6">
+                <h2 class="text-lg font-semibold text-blue-600 mb-4">Processo do Orçamento</h2>
+                <div class="space-y-4">
+                    <!-- Categoria 1 -->
+                    <div>
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>Alimentação</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="relative w-full h-4 bg-gray-200 rounded-full overflow-hidden">
+                            <div class="absolute h-full bg-blue-600" style="width: 80%;"></div>
+                            <div class="absolute h-full bg-red-600" style="width: 10%; left: 80%;"></div>
+                        </div>
+                    </div>
+            
+                    <!-- Categoria 2 -->
+                    <div>
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>Locomoção</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="relative w-full h-4 bg-gray-200 rounded-full overflow-hidden">
+                            <div class="absolute h-full bg-blue-600" style="width: 75%;"></div>
+                            <div class="absolute h-full bg-red-600" style="width: 5%; left: 75%;"></div>
+                        </div>
+                    </div>
+            
+                    <!-- Categoria 3 -->
+                    <div>
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>Mercado</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="relative w-full h-4 bg-gray-200 rounded-full overflow-hidden">
+                            <div class="absolute h-full bg-blue-600" style="width: 90%;"></div>
+                            <div class="absolute h-full bg-red-600" style="width: 10%; left: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+            <!-- Alertas de Orçamento -->
+            <section class="card p-6">
+                <h2 class="text-lg font-semibold text-blue-600 mb-4">Alerta de Orçamento</h2>
+                <div class="alert p-3 mb-4">⚠️ Alimentação: Você está perto de exceder o orçamento em 10%.</div>
+                <div class="alert p-3 mb-4">⚠️ Locomoção: Você está perto de exceder o orçamento em 6,7%.</div>
+                <div class="alert p-3">⚠️ Mercado: Você está perto de exceder o orçamento em 10%.</div>
+                <button class="btn w-full py-2 rounded-lg mt-6">Salvar Orçamento</button>
+            </section>
         </main>
     </div>
 </body>
 </html>
-``
